@@ -5,7 +5,7 @@ import crypto from "crypto";
 import Joi from "joi";
 import express from "express";
 
-const router = express.Router();//joi eklendi
+const router = express.Router();//joi eklendi..
 
 router.post("/", async (req, res) => {
     try {
