@@ -1,9 +1,7 @@
 import mongoose from "mongoose";
-import { Schema } from "mongoose";
 import Joi from "joi";
 
-
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -18,7 +16,7 @@ const userSchema = new Schema({
     },
 });
 
-const User = mongoose.model("user", userSchema);
+const User = mongoose.model("User", userSchema);
 
 const validate = (user) => {
     const schema = Joi.object({
@@ -29,4 +27,4 @@ const validate = (user) => {
     return schema.validate(user);
 };
 
-module.exports = { User, validate };
+export { User, validate };
