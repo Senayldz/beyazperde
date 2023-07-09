@@ -2,10 +2,10 @@ import { User } from "../models/userModel.js";
 import Token from "../models/token.js";
 import sendEmail from "../utils/sendEmail.js";
 import crypto from "crypto";
-import Joi from "joi";
+import * as Joi from "joi";
 import express from "express";
 
-const router = express.Router();//joi eklendi...
+const router = express.Router();
 
 router.post("/", async (req, res) => {
     try {
