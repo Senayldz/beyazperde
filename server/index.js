@@ -7,7 +7,7 @@ import tvSeriesRouter from './Routers/tvSeriesRouter.js'
 import cors from 'cors'
 
 import passwordReset from "./Routers/passwordReset.js";
-import users from "./Routers/users.js";
+import users from "./Routers/userRouter.js";
 
 
 dotenv.config()
@@ -23,7 +23,7 @@ app.use('/tvseries',tvSeriesRouter)
 
 app.use(express.json());
 
-app.use("/password/users", users);
+app.use("/password/users", userRouter);
 app.use("/password/password-reset", passwordReset);
 //....
 
