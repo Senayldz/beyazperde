@@ -17,7 +17,7 @@ const corsOptions = {
 const app=express()
 app.use(cors())
 app.use(express.json())
-app.use("/users",userRouter)
+app.use("/users",users)
 app.use("/news",newRouter)
 app.use('/tvseries',tvSeriesRouter)
 
