@@ -28,3 +28,4 @@ const sendEmail = async (email, subject, text) => {
 };
 
 module.exports = sendEmail;
+export default sendEmail;
