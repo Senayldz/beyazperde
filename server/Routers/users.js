@@ -1,4 +1,4 @@
-import { User, validate } from "../models/user";
+import { User, validate } from "../models/userModel.js";
 import express from "express";
 
 const router = express.Router();
