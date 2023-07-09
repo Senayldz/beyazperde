@@ -1,6 +1,6 @@
-import { User } from "../models/user";
-import Token from "../models/token";
-import sendEmail from "../utils/sendEmail";
+import { User } from "../models/user.js";
+import Token from "../models/token.js";
+import sendEmail from "../utils/sendEmail.js";
 import crypto from "crypto";
 import Joi from "joi";
 import express from "express";
