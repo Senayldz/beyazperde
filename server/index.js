@@ -6,8 +6,8 @@ import newRouter from './Routers/newRouter.js'
 import tvSeriesRouter from './Routers/tvSeriesRouter.js'
 import cors from 'cors'
 
-import passwordReset from "./Routers/passwordReset";
-import users from "./Routers/users";
+import passwordReset from "./Routers/passwordReset.js";
+import users from "./Routers/users.js";
 
 
 dotenv.config()
