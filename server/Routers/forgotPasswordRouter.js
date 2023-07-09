@@ -4,7 +4,7 @@ import ForgotPassword from "../models/ForgotPassword"; // Şifre sıfırlama mod
 
 const router = express.Router();
 
-router.post("/forgot-password", async (req, res) => {
+router.post("/password/password", async (req, res) => {
   const { email } = req.body;
 
   try {
