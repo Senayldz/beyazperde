@@ -9,5 +9,9 @@
     "start-client": "cd client && npm run start"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "joi": "^17.9.2",
+    "nodemailer": "^6.9.3"
+  }
 }

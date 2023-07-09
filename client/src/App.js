@@ -36,6 +36,7 @@ function App() {
           <Route path='/userscreen' element={<UserScreen/>}/>
           <Route path='/tvseries/getall' element={<TvSeriesScreen/>}/>
           <Route path='/tvseries/addtvseries' element={<AddTvSeries/>}/>
+          <Route path='/password/password' element={<ResetPasswordScreen/>}/>
 
 
 

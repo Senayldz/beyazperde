@@ -1,32 +1,32 @@
 import mongoose from "mongoose";
-import validator from 'validator'
+import { Schema } from "mongoose";
+import Joi from "joi";
 
-const userSchema=mongoose.Schema({
-    fullname:{
-        type:String,
-        required: true,
-        minlength :[5,"Fullname must be at least 8 characters"]
-    },
-    email:{
-        type:String,
-        required: true,
-        validate:[validator.isEmail,"Email is not valid"]
-    }, 
-    password:{
-        type:String,
-        required: true,
-        minlength :[8,"Password must be at least 8 characters"]
-    },
-    userType:{
-        type:String,
-        enum: ['USER','ADMIN'],
-        default: 'USER'
-    },
-    phoneNumber:{
-        type:String,
-        required: true
-    },
 
-})
+const userSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    email: {
+        type: String,
+        required: true,
+    },
+    password: {
+        type: String,
+        required: true,
+    },
+});
 
-export default mongoose.model('User',userSchema)
+const User = mongoose.model("user", userSchema);
+
+const validate = (user) => {
+    const schema = Joi.object({
+        name: Joi.string().required(),
+        email: Joi.string().email().required(),
+        password: Joi.string().required(),
+    });
+    return schema.validate(user);
+};
+
+module.exports = { User, validate };

@@ -7,6 +7,9 @@ import tvSeriesRouter from './Routers/tvSeriesRouter.js'
 import cors from 'cors'
 import ForgotPassword from './Routers/forgotPasswordRouter.js'
 
+import passwordReset from "./routes/passwordReset";
+import users from "./routes/users";
+import connection from "./db";
 
 
 dotenv.config()
@@ -19,6 +22,13 @@ app.use(express.json())
 app.use("/users",userRouter)
 app.use("/news",newRouter)
 app.use('/tvseries',tvSeriesRouter)
+
+
+app.use(express.json());
+
+app.use("/password/users", users);
+app.use("/password/password-reset", passwordReset);
+//....
 
 
 app.listen(process.env.PORT ||5000,()=>{ 
