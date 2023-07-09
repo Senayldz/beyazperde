@@ -1,5 +1,4 @@
-import { User } from "../models/userModel.js";
-import Token from "../models/token.js";
+import { Token } from "../models/token.js";
 import sendEmail from "../utils/sendEmail.js";
 import crypto from "crypto";
 import Joi from "joi";
@@ -61,4 +60,4 @@ router.post("/:userId/:token", async (req, res) => {
     }
 });
 
-module.exports = router;
+export default router;
