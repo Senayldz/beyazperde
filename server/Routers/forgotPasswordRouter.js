@@ -9,6 +9,7 @@ router.post("/password", async (req, res) => {
   try {
     // Şifre sıfırlama bağlantısı için bir token oluşturun
 
+
     // Şifre sıfırlama verilerini veritabanına kaydedin
     await ForgotPassword.create({ email, resetToken });
 
