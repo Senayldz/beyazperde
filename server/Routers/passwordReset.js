@@ -1,4 +1,4 @@
-import Token from "../models/token.js";
+import Token from '../models/token.js';
 import sendEmail from "../utils/sendEmail.js";
 import crypto from "crypto";
 import Joi from "joi";
