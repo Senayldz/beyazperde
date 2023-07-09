@@ -1,0 +1,34 @@
+import express from 'express'
+import dotenv from 'dotenv'
+import mongoose from 'mongoose'
+import userRouter from './Routers/userRouter.js'
+import newRouter from './Routers/newRouter.js'
+import tvSeriesRouter from './Routers/tvSeriesRouter.js'
+import cors from 'cors'
+import ForgotPassword from './Routers/forgotPasswordRouter.js'
+
+
+
+dotenv.config()
+const corsOptions = {
+    origin: "https://localhost:3000" // frontend URI (ReactJS)
+}
+const app=express()
+app.use(cors())
+app.use(express.json())
+app.use("/users",userRouter)
+app.use("/news",newRouter)
+app.use('/tvseries',tvSeriesRouter)
+app.use('/password', ForgotPassword)
+
+
+app.listen(process.env.PORT ||5000,()=>{ 
+    mongoose.connect(process.env.MONGO_URI,{
+        useNewUrlParser:true,
+        useUnifiedTopology:true
+
+    }).then(()=>
+        console.log("mongodb connected")
+    ).catch((error)=>console.log("bağlantı yok",error))
+    console.log("Server is running")
+})
