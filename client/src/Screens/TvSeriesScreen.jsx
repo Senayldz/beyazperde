@@ -14,7 +14,7 @@ const TvSeriesScreen = () => {
     useEffect(()=>{
         const fetchAllSeries=async ()=>{
           try { 
-            const res=await axios.get("https://localhost:5000/tvseries/getall")
+            const res=await axios.get("https://reactapp-fnsv.onrender.com/tvseries/getall")
             setSeries(res.data);
            
         } catch (error) {

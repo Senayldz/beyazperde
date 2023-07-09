@@ -26,7 +26,7 @@ const handleChange=(e)=>{
 const handleClick=async e=>{
     e.preventDefault()
     try {
-        await axios.post("https://localhost:5000/tvseries/addtvseries",tvSeries)
+        await axios.post("https://reactapp-fnsv.onrender.com/tvseries/addtvseries",tvSeries)
         navigate("/tvseries/getall")
     } catch (err) {
         console.log(err)

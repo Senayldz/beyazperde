@@ -11,7 +11,7 @@ import ForgotPassword from './Routers/forgotPasswordRouter.js'
 
 dotenv.config()
 const corsOptions = {
-    origin: "https://localhost:3000" // frontend URI (ReactJS)
+    origin: "https://reactapp-frontend-zvml.onrender.com/" // frontend URI (ReactJS)
 }
 const app=express()
 app.use(cors())
