@@ -19,7 +19,6 @@ app.use(express.json())
 app.use("/users",userRouter)
 app.use("/news",newRouter)
 app.use('/tvseries',tvSeriesRouter)
-app.use('/password', ForgotPassword)
 
 
 app.listen(process.env.PORT ||5000,()=>{ 
