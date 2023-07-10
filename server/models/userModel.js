@@ -1,22 +1,25 @@
 import mongoose from "mongoose";
-import Joi from "joi";
+const { Schema } = mongoose;
 
-const userSchema = new mongoose.Schema({
-    name: {
+const tokenSchema = new Schema({
+    userId: {
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: "user",
+    },
+    token: {
         type: String,
         required: true,
     },
-    email: {
-        type: String,
-        required: true,
-    },
-    password: {
-        type: String,
-        required: true,
+    createdAt: {
+        type: Date,
+        default: Date.now,
+        expires: 3600,
     },
 });
 
-const User = mongoose.model("user", userSchema);
+
+const User = mongoose.model("Token", tokenSchema);
 
 const validate = (user) => {
     const schema = Joi.object({
