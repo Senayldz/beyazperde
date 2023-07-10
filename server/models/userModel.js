@@ -1,11 +1,13 @@
 import mongoose from "mongoose";
+import Joi from "joi";
+
 const { Schema } = mongoose;
 
 const tokenSchema = new Schema({
     userId: {
         type: Schema.Types.ObjectId,
         required: true,
-        ref: "user",
+        ref: "User",
     },
     token: {
         type: String,
@@ -18,16 +20,14 @@ const tokenSchema = new Schema({
     },
 });
 
-
 const User = mongoose.model("Token", tokenSchema);
 
-const validate = (user) => {
+const validate = (token) => {
     const schema = Joi.object({
-        name: Joi.string().required(),
-        email: Joi.string().email().required(),
-        password: Joi.string().required(),
+        userId: Joi.string().required(),
+        token: Joi.string().required(),
     });
-    return schema.validate(user);
+    return schema.validate(token);s
 };
 
 export { User, validate };
