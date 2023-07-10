@@ -20,14 +20,14 @@ const tokenSchema = new Schema({
     },
 });
 
-const User = mongoose.model("Token", tokenSchema);
+const Token = mongoose.model("Token", tokenSchema);
 
 const validate = (token) => {
     const schema = Joi.object({
         userId: Joi.string().required(),
         token: Joi.string().required(),
     });
-    return schema.validate(token);s
+    return schema.validate(token);
 };
 
-export { User, validate };
+export { Token as default, validate };
