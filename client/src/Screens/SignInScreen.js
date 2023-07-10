@@ -50,7 +50,7 @@ const SignInScreen=({setUser})=>{
                     <Form.Text className="text-center mt-2">Bir hesabınız yok mu?
                      <Link to="/signup">Üye ol</Link>   
                      &nbsp;&nbsp;
-                     <Link to="/password/password">Şifremi Unuttum</Link>   
+                     <Link to="/password/password-reset">Şifremi Unuttum</Link>   
                     </Form.Text>
                     </Form.Group>
                 </form>
